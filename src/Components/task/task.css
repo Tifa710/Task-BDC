@@ -1,0 +1,4 @@
+.form-control:hover:focus {
+  border-color: rgba(255, 68, 0, 0.581);
+  box-shadow: 0 0 0 0.25rem rgba(255, 68, 0, 0.581);
+}

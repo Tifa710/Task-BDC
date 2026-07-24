@@ -1,0 +1,81 @@
+<section class="mt-5">
+  <div class="container pb-3">
+    <div class="row">
+      @for (task of tasks; track task.id) {
+        <div class="col-12 col-md-6 mt-md-2 mt-3">
+          <div
+            class="d-flex justify-content-between align-items-center border border-2 rounded-2 p-2 shadow"
+          >
+            <div>
+              <h2>{{ task.title }}</h2>
+              <p>Assigned Member</p>
+              <p>{{ task.completed ? 'Completed' : 'InComplete' }}</p>
+              <time>
+                Deadline:
+                {{ task.deadline | date: 'dd/MM/yyyy' }}
+              </time>
+
+              @if (isDeadlinePassed(task.deadline)) {
+                <p class="text-danger">Deadline Passed</p>
+              }
+            </div>
+
+            <div
+              class="me-5 border border-1 shadow p-2 rounded-2"
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModal"
+              style="cursor: pointer"
+            >
+              <i class="fa-solid fa-pen" style="color: #ff4500"></i>
+            </div>
+
+            <div
+              class="modal fade"
+              id="exampleModal"
+              tabindex="-1"
+              aria-labelledby="exampleModalLabel"
+              aria-hidden="true"
+              (click)="edit(task)"
+            >
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Update Task</h1>
+                  </div>
+
+                  <div class="modal-body">
+                    <form [formGroup]="editForm">
+                      <label class="fw-bold" for="taskTitle">Task Title</label>
+                      <input
+                        id="taskTitle"
+                        type="text"
+                        placeholder="Please Enter Your Title"
+                        formControlName="title"
+                        class="form-control mt-1"
+                      />
+                      <label class="fw-bold mt-3" for="taskUser">Add or Change user </label>
+                      <select class="form-control mt-1" name="" id="">
+                        <option value="">Tefa</option>
+                        <option value="">Tefa</option>
+                        <option value="">Tefa</option>
+                      </select>
+                    </form>
+                  </div>
+
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                      Close
+                    </button>
+                    <button type="button" class="btn btn-primary" (click)="save()">
+                      Save changes
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

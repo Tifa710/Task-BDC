@@ -1,0 +1,11 @@
+.navbar {
+  background-color: #f05630 !important;
+}
+.container img {
+  width: 60px;
+}
+.container a {
+  color: white;
+  font-size: larger;
+  font-weight: 700;
+}

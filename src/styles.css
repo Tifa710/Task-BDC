@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+.btn-primary {
+  background-color: orangered !important;
+  border-color: orangered !important;
+  transition: 500ms;
+}
+.btn-primary:hover {
+  transform: scale(1.03);
+  cursor: pointer;
+}
+.form-check-input:focus {
+  border-color: orangered !important;
+  box-shadow: 0 0 0 0.25rem rgba(237, 109, 5, 0.288);
+}

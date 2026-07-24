@@ -1,0 +1,8 @@
+.card-header img {
+  height: 300px;
+}
+.form-check-input:checked {
+  background-color: orangered;
+  border-color: orangered;
+  box-shadow: 0 0 15px rgba(255, 69, 0, 0.5) !important;
+}
