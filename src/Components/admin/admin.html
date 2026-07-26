@@ -1,0 +1,39 @@
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="mx-auto text-center mt-5 shadow">
+          <form class="form-control p-5" action="">
+            <legend>Administration Page</legend>
+            <div class="row">
+              <div class="col-6 dropdown">
+                <p>Select User</p>
+                <select class="form-select" [(ngModel)]="selectedUser" name="user">
+                  <option [ngValue]="null">Choose User</option>
+
+                  @for (user of users; track user.id) {
+                    <option [ngValue]="user">
+                      {{ user.name }}
+                    </option>
+                  }
+                </select>
+              </div>
+              <div class="col-6 dropdown">
+                <p>Select Role</p>
+
+                <select class="form-select" [(ngModel)]="selectedRole" name="role">
+                  @for (role of roles; track role) {
+                    <option [value]="role">
+                      {{ role }}
+                    </option>
+                  }
+                </select>
+              </div>
+              <button class="btn btn-primary mt-3" (click)="save()">Save</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

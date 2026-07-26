@@ -1,0 +1,99 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 350px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 20px;
+  position: relative;
+}
+
+.title {
+  font-size: 28px;
+  color: orangered;
+  font-weight: 600;
+  letter-spacing: -1px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-left: 30px;
+}
+
+.title::before,
+.title::after {
+  position: absolute;
+  content: '';
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  left: 0;
+  background-color: orangered;
+}
+
+.title::before {
+  width: 18px;
+  height: 18px;
+}
+
+.title::after {
+  animation: pulse 1s linear infinite;
+}
+
+.form label {
+  width: 100%;
+}
+
+.form label .input {
+  width: 100%;
+  padding: 12px;
+  outline: none;
+  border: 1px solid rgba(105, 105, 105, 0.397);
+  border-radius: 10px;
+  font-size: 15px;
+}
+
+.form label .input:focus {
+  border-color: orangered;
+}
+
+.signin {
+  text-align: center;
+  color: rgba(88, 87, 87, 0.822);
+}
+
+.signin a {
+  color: orangered;
+  text-decoration: none;
+}
+
+.signin a:hover {
+  text-decoration: underline;
+}
+
+.submit {
+  border: none;
+  outline: none;
+  background-color: orangered;
+  padding: 12px;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.submit:hover {
+  background-color: rgba(255, 68, 0, 0.75);
+  cursor: pointer;
+}
+@keyframes pulse {
+  from {
+    transform: scale(0.9);
+    opacity: 1;
+  }
+
+  to {
+    transform: scale(2);
+    opacity: 0;
+  }
+}

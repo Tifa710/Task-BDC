@@ -4,7 +4,8 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { Task } from './task.modal';
 import { TaskService } from './task.service';
-
+import { AuthService } from '../Auth/auth.service';
+import { User } from '../../DummyUser/usermodel';
 @Component({
   selector: 'app-task',
   standalone: true,
@@ -13,8 +14,10 @@ import { TaskService } from './task.service';
   styleUrl: './task.css',
 })
 export class TaskComponent implements OnInit {
+  currentUser: User | null = null;
   selectedTask!: Task;
   private taskService = inject(TaskService);
+  private authService = inject(AuthService);
   tasks: Task[] = [];
   private route = inject(ActivatedRoute);
   projectId = this.route.snapshot.paramMap.get('id');
@@ -30,6 +33,9 @@ export class TaskComponent implements OnInit {
       error: (err) => {
         console.log(err);
       },
+    });
+    this.authService.currentUser$.subscribe((user) => {
+      this.currentUser = user;
     });
   }
   isDeadlinePassed(deadline: string): boolean {
@@ -56,5 +62,9 @@ export class TaskComponent implements OnInit {
         },
         error: (err) => console.log(err),
       });
+  }
+
+  getUserRole(): boolean {
+    return this.currentUser?.role === 'teamleader';
   }
 }
