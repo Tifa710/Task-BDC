@@ -13,4 +13,7 @@ export class AuthService {
   login(user: User) {
     this.currentUser.next(user);
   }
+  isLoggedIn(): boolean {
+    return this.currentUser.value !== null;
+  }
 }
