@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { User } from '../../DummyUser/usermodel';
+import { User } from '../Models/usermodel';
 
 @Injectable({
   providedIn: 'root',
@@ -12,6 +12,9 @@ export class AuthService {
 
   login(user: User) {
     this.currentUser.next(user);
+  }
+  logout() {
+    this.currentUser.next(null);
   }
   isLoggedIn(): boolean {
     return this.currentUser.value !== null;

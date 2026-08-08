@@ -1,4 +1,4 @@
-import { User } from './usermodel';
+import { User } from '../Models/usermodel';
 
 export const users: User[] = [
   // Admins
@@ -44,7 +44,7 @@ export const users: User[] = [
   {
     id: 6,
     name: 'Nada Mahmoud',
-    email: 'nada.member@example.com',
+    email: 'nada.member@gmail.com',
     password: 'Member@123',
     role: 'teammember',
     leaderId: 3,

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { users } from '../../DummyUser/dummyuser';
-import { User } from '../../DummyUser/usermodel';
+import { User } from '../../Models/usermodel';
 
 @Component({
   selector: 'app-admin',

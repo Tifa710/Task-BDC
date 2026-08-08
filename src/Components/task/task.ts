@@ -2,10 +2,10 @@ import { DatePipe } from '@angular/common';
 import { Component, inject, OnInit } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
-import { Task } from './task.modal';
-import { TaskService } from './task.service';
-import { AuthService } from '../Auth/auth.service';
-import { User } from '../../DummyUser/usermodel';
+import { Task } from '../../Models/task.model';
+import { TaskService } from '../../Services/task.service';
+import { AuthService } from '../../Services/auth.service';
+import { User } from '../../Models/usermodel';
 @Component({
   selector: 'app-task',
   standalone: true,

@@ -7,8 +7,30 @@
       name="email"
       placeholder="Email"
       required
-      [(ngModel)]="userEmail"
+      [formControl]="userEmail"
     />
+    @if (userEmail.touched && userEmail.invalid) {
+      @if (userEmail.hasError('required')) {
+        <div class="validation-error">
+          <i class="fa-solid fa-circle-exclamation"></i>
+          <span>Email is required</span>
+        </div>
+      }
+
+      @if (userEmail.hasError('pattern')) {
+        <div class="validation-error">
+          <i class="fa-solid fa-circle-exclamation"></i>
+          <span>Please enter a valid Gmail address.</span>
+        </div>
+      }
+    }
+
+    @if (userNotFound) {
+      <div class="validation-error">
+        <i class="fa-solid fa-user-xmark"></i>
+        <span>You don't have an account. Please sign up.</span>
+      </div>
+    }
   </label>
 
   <label>
@@ -18,9 +40,48 @@
       name="password"
       placeholder="Password"
       required
-      [(ngModel)]="userPassword"
+      [formControl]="userPassword"
     />
   </label>
+  @if (userPassword.touched && userPassword.invalid) {
+    <div class="password-error">
+      @if (userPassword.hasError('required')) {
+        <div class="error-message">
+          <i class="fa-solid fa-circle-exclamation"></i>
+          <span>Password is required</span>
+        </div>
+      }
+
+      @if (userPassword.hasError('pattern')) {
+        <div class="password-rules">
+          <div class="rules-title">
+            <i class="fa-solid fa-shield-halved"></i>
+            <span>Password requirements</span>
+          </div>
+
+          <div class="rule">
+            <i class="fa-solid fa-check"></i>
+            <span>At least one uppercase letter</span>
+          </div>
+
+          <div class="rule">
+            <i class="fa-solid fa-check"></i>
+            <span>At least one number</span>
+          </div>
+
+          <div class="rule">
+            <i class="fa-solid fa-check"></i>
+            <span>At least one special character</span>
+          </div>
+
+          <div class="rule">
+            <i class="fa-solid fa-check"></i>
+            <span>At least 8 characters</span>
+          </div>
+        </div>
+      }
+    </div>
+  }
 
   <button class="submit" type="submit">Submit</button>
   <p class="signin">Already have an acount ? <a href="#">Signin</a></p>

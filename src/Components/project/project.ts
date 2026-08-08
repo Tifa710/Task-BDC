@@ -1,7 +1,7 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { ProjectService } from './project.service';
-import { Project } from './project.model';
+import { ProjectService } from '../../Services/project.service';
+import { Project } from '../../Models/project.model';
 import { DatePipe } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 @Component({
