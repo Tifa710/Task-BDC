@@ -9,24 +9,30 @@ export const routes: Routes = [
   },
   {
     path: 'login',
-    loadComponent: () => import('../Components/Auth/auth').then((m) => m.AuthComponent),
+    loadComponent: () => import('../Components/Auth/auth').then((c) => c.AuthComponent),
     title: 'BDC | Sign In',
   },
   {
+    path: 'signup',
+    loadComponent: () =>
+      import('../Components/signup/signup.component').then((c) => c.SignupComponent),
+    title: 'BDC | Sign Up',
+  },
+  {
     path: 'project',
-    loadComponent: () => import('../Components/project/project').then((m) => m.ProjectComponent),
+    loadComponent: () => import('../Components/project/project').then((c) => c.ProjectComponent),
     title: 'BDC | Project',
     canActivate: [authGuard],
   },
   {
     path: 'admin',
-    loadComponent: () => import('../Components/admin/admin').then((m) => m.AdminComponent),
+    loadComponent: () => import('../Components/admin/admin').then((c) => c.AdminComponent),
     title: 'BDC | admin',
     canActivate: [authGuard],
   },
   {
     path: 'task/:id',
-    loadComponent: () => import('../Components/task/task').then((m) => m.TaskComponent),
+    loadComponent: () => import('../Components/task/task').then((c) => c.TaskComponent),
     title: 'BDC | Task',
     canActivate: [authGuard],
   },

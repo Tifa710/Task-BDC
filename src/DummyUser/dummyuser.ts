@@ -5,14 +5,14 @@ export const users: User[] = [
   {
     id: 1,
     name: 'Ahmed Mohamed',
-    email: 'ahmed.admin@example.com',
+    email: 'ahmed.admin@gmail.com',
     password: 'Admin@123',
     role: 'admin',
   },
   {
     id: 2,
     name: 'Sara Ali',
-    email: 'sara.admin@example.com',
+    email: 'sara.admin@gmail.com',
     password: 'Admin@123',
     role: 'admin',
   },
@@ -21,21 +21,21 @@ export const users: User[] = [
   {
     id: 3,
     name: 'Omar Hassan',
-    email: 'omar.leader@example.com',
+    email: 'omar.leader@gmail.com',
     password: 'Leader@123',
     role: 'teamleader',
   },
   {
     id: 4,
     name: 'Mona Adel',
-    email: 'mona.leader@example.com',
+    email: 'mona.leader@gmail.com',
     password: 'Leader@123',
     role: 'teamleader',
   },
   {
     id: 5,
     name: 'Youssef Tarek',
-    email: 'youssef.leader@example.com',
+    email: 'youssef.leader@gmail.com',
     password: 'Leader@123',
     role: 'teamleader',
   },
@@ -52,7 +52,7 @@ export const users: User[] = [
   {
     id: 7,
     name: 'Khaled Samir',
-    email: 'khaled.member@example.com',
+    email: 'khaled.member@gmail.com',
     password: 'Member@123',
     role: 'teammember',
     leaderId: 3,
@@ -62,7 +62,7 @@ export const users: User[] = [
   {
     id: 8,
     name: 'Salma Ahmed',
-    email: 'salma.member@example.com',
+    email: 'salma.member@gmail.com',
     password: 'Member@123',
     role: 'teammember',
     leaderId: 4,
@@ -70,7 +70,7 @@ export const users: User[] = [
   {
     id: 9,
     name: 'Mostafa Ali',
-    email: 'mostafa.member@example.com',
+    email: 'mostafa.member@gmail.com',
     password: 'Member@123',
     role: 'teammember',
     leaderId: 4,
@@ -80,7 +80,7 @@ export const users: User[] = [
   {
     id: 10,
     name: 'Fatma Ibrahim',
-    email: 'fatma.member@example.com',
+    email: 'fatma.member@gmail.com',
     password: 'Member@123',
     role: 'teammember',
     leaderId: 5,
@@ -88,7 +88,7 @@ export const users: User[] = [
   {
     id: 11,
     name: 'Ali Mahmoud',
-    email: 'ali.member@example.com',
+    email: 'ali.member@gmail.com',
     password: 'Member@123',
     role: 'teammember',
     leaderId: 5,
@@ -96,7 +96,7 @@ export const users: User[] = [
   {
     id: 12,
     name: 'Nour Hany',
-    email: 'nour.member@example.com',
+    email: 'nour.member@gmail.com',
     password: 'Member@123',
     role: 'teammember',
     leaderId: 5,

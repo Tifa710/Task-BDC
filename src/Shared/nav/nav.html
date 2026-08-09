@@ -1,15 +1,16 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary shadow">
-  <div class="container justify-content-start">
-    <img class="bg-white rounded-2" src="/images/OIP-removebg-preview.png" alt="" />
-    <a class="navbar-brand ms-1" href="#">Banque Du Caire</a>
-  </div>
-  <div>
-    @if (!isAuthPage) {
-      <button class="logout-btn" type="button" (click)="logout()">
-        <i class="fa-solid fa-right-from-bracket"></i>
-        <span>Logout</span>
-      </button>
+<nav class="navbar navbar-expand-lg shadow-sm">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center" routerLink="/">
+      <img src="/images/OIP-removebg-preview.png" alt="Banque Du Caire" class="brand-logo" />
+      <span class="brand-name"> Banque Du Caire </span>
+    </a>
+    @if (!isAuthPage && !isSignUpPage) {
+      <div class="ms-auto">
+        <button class="logout-btn" type="button" (click)="logout()">
+          <i class="fa-solid fa-right-from-bracket"></i>
+          <span>Logout</span>
+        </button>
+      </div>
     }
   </div>
 </nav>
-  

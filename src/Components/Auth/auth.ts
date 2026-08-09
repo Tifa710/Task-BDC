@@ -2,11 +2,11 @@ import { Component, inject } from '@angular/core';
 import { FormControl, FormsModule, Validators, ReactiveFormsModule } from '@angular/forms';
 import { users } from '../../DummyUser/dummyuser';
 import { AuthService } from '../../Services/auth.service';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-auth',
-  imports: [FormsModule, ReactiveFormsModule],
+  imports: [FormsModule, ReactiveFormsModule, RouterLink],
   templateUrl: './auth.html',
   styleUrl: './auth.css',
 })

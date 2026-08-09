@@ -19,4 +19,7 @@ export class Nav {
   get isAuthPage(): boolean {
     return this.router.url === '/login';
   }
+  get isSignUpPage(): boolean {
+    return this.router.url === '/signup';
+  }
 }
