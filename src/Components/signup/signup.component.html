@@ -1,12 +1,109 @@
-<form class="form shadow mt-5 mx-auto">
-  <p class="title">Sign Up</p>
-  <label>
-    <input class="input" type="email" name="email" placeholder="Email" required />
-  </label>
-
-  <label>
-    <input class="input" type="password" name="password" placeholder="Password" required />
-  </label>
-  <button class="submit" type="submit">Submit</button>
-  <p class="signin">Already have an acount ? <a routerLink="/login">Sign In</a></p>
-</form>
+<div class="container">
+  <div class="row align-items-center">
+    <form (ngSubmit)="signUp()" class="col-12 col-md-6 form shadow mt-5 mx-auto">
+      <p class="title">Sign Up</p>
+      <label>
+        <input
+          class="input"
+          [class.is-valid]="userName.valid && userName.touched"
+          [class.is-invalid]="userName.invalid && userName.touched"
+          type="text"
+          name="name"
+          placeholder="Full Name"
+          required
+          [formControl]="userName"
+        />
+      </label>
+      <label>
+        <input
+          class="input"
+          [class.is-valid]="userEmail.valid && userEmail.touched"
+          [class.is-invalid]="userEmail.invalid && userEmail.touched"
+          type="email"
+          name="email"
+          placeholder="Email"
+          required
+          [formControl]="userEmail"
+        />
+      </label>
+      <label>
+        <input
+          class="input"
+          [class.is-valid]="userPassword.valid && userPassword.touched"
+          [class.is-invalid]="userPassword.invalid && userPassword.touched"
+          type="password"
+          name="password"
+          placeholder="Password"
+          required
+          [formControl]="userPassword"
+        />
+      </label>
+      <label>
+        <input
+          class="input"
+          [class.is-valid]="
+            confirmPassword.valid &&
+            confirmPassword.touched &&
+            confirmPassword.value === userPassword.value
+          "
+          [class.is-invalid]="
+            confirmPassword.touched && confirmPassword.value !== userPassword.value
+          "
+          type="password"
+          name="confirmPassword"
+          placeholder="Confirm Password"
+          required
+          [formControl]="confirmPassword"
+        />
+      </label>
+      @if (confirmPassword.touched && !passwordsMatch) {
+        <small class="text-danger"> Passwords do not match </small>
+      }
+      <label>
+        <input
+          class="input"
+          type="date"
+          name="BOD"
+          placeholder="Birth of Date"
+          required
+          [formControl]="userBirthDate"
+        />
+      </label>
+      <button class="submit" type="submit">Submit</button>
+      <p class="signin">Already have an acount ? <a routerLink="/login">Sign In</a></p>
+    </form>
+    <div class="col-12 col-md-6 mb-3 mb-md-0 mt-5">
+      <div class="password-error">
+        <div class="password-rules">
+          <div class="rules-title">
+            <i class="fa-solid fa-shield-halved"></i>
+            <span>Email requirements</span>
+          </div>
+          <div class="rule">
+            <i class="fa-solid fa-envelope-circle-check"></i> <span> Accept Only Gmail</span>
+          </div>
+          <div class="rules-title mt-3">
+            <i class="fa-solid fa-shield-halved"></i>
+            <span>Password requirements</span>
+          </div>
+          <div class="rule">
+            <i class="fa-solid fa-check"></i>
+            <span>At least one uppercase letter</span>
+          </div>
+          <div class="rule">
+            <i class="fa-solid fa-check"></i>
+            <span>At least one number</span>
+          </div>
+          <div class="rule">
+            <i class="fa-solid fa-check"></i>
+            <span>At least one special character</span>
+          </div>
+          <div class="rule">
+            <i class="fa-solid fa-check"></i>
+            <span>At least 8 characters</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

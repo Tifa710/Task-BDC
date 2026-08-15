@@ -24,7 +24,11 @@ export class AuthComponent {
   private authService = inject(AuthService);
   private router = inject(Router);
   logIn() {
-    const user = this.userSigned.find(
+    const savedUsers = JSON.parse(localStorage.getItem('users') ?? '[]');
+
+    const allUsers = [...this.userSigned, ...savedUsers];
+
+    const user = allUsers.find(
       (u) => u.email === this.userEmail.value && u.password === this.userPassword.value,
     );
     if (user) {
