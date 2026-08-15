@@ -1,5 +1,38 @@
 <div class="container">
   <div class="row align-items-center">
+    <div class="col-12 col-md-6 mb-3 mb-md-0 mt-5">
+      <div class="password-error">
+        <div class="password-rules">
+          <div class="rules-title">
+            <i class="fa-solid fa-shield-halved"></i>
+            <span>Email requirements</span>
+          </div>
+          <div class="rule">
+            <i class="fa-solid fa-envelope-circle-check"></i> <span> Accept Only Gmail</span>
+          </div>
+          <div class="rules-title mt-3">
+            <i class="fa-solid fa-shield-halved"></i>
+            <span>Password requirements</span>
+          </div>
+          <div class="rule">
+            <i class="fa-solid fa-check"></i>
+            <span>At least one uppercase letter</span>
+          </div>
+          <div class="rule">
+            <i class="fa-solid fa-check"></i>
+            <span>At least one number</span>
+          </div>
+          <div class="rule">
+            <i class="fa-solid fa-check"></i>
+            <span>At least one special character</span>
+          </div>
+          <div class="rule">
+            <i class="fa-solid fa-check"></i>
+            <span>At least 8 characters</span>
+          </div>
+        </div>
+      </div>
+    </div>
     <form (ngSubmit)="signUp()" class="col-12 col-md-6 form shadow mt-5 mx-auto">
       <p class="title">Sign Up</p>
       <label>
@@ -72,38 +105,5 @@
       <button class="submit" type="submit">Submit</button>
       <p class="signin">Already have an acount ? <a routerLink="/login">Sign In</a></p>
     </form>
-    <div class="col-12 col-md-6 mb-3 mb-md-0 mt-5">
-      <div class="password-error">
-        <div class="password-rules">
-          <div class="rules-title">
-            <i class="fa-solid fa-shield-halved"></i>
-            <span>Email requirements</span>
-          </div>
-          <div class="rule">
-            <i class="fa-solid fa-envelope-circle-check"></i> <span> Accept Only Gmail</span>
-          </div>
-          <div class="rules-title mt-3">
-            <i class="fa-solid fa-shield-halved"></i>
-            <span>Password requirements</span>
-          </div>
-          <div class="rule">
-            <i class="fa-solid fa-check"></i>
-            <span>At least one uppercase letter</span>
-          </div>
-          <div class="rule">
-            <i class="fa-solid fa-check"></i>
-            <span>At least one number</span>
-          </div>
-          <div class="rule">
-            <i class="fa-solid fa-check"></i>
-            <span>At least one special character</span>
-          </div>
-          <div class="rule">
-            <i class="fa-solid fa-check"></i>
-            <span>At least 8 characters</span>
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
 </div>
