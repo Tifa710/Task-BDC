@@ -9,7 +9,6 @@
       required
       [formControl]="userEmail"
     />
-
   </label>
 
   <label>
@@ -22,7 +21,20 @@
       [formControl]="userPassword"
     />
   </label>
-  
+
   <button class="submit" type="submit">Submit</button>
   <p class="signin">Don't have an acount ? <a routerLink="/signup">Signup</a></p>
 </form>
+@if (userNotFound) {
+  <div class="modal-backdrop">
+    <div class="login-modal">
+      <i class="fa-solid fa-circle-exclamation"></i>
+
+      <h3>User Not Found</h3>
+
+      <p>The email or password you entered is incorrect.</p>
+
+      <button type="button" class="modal-btn" (click)="userNotFound = false">Try Again</button>
+    </div>
+  </div>
+}
