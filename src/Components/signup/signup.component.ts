@@ -12,7 +12,7 @@ export class SignupComponent {
   private route = inject(Router);
   userName: FormControl<string | null> = new FormControl('', [
     Validators.required,
-    Validators.pattern(/^[a-zA-Z][a-zA-Z0-9_]{2,19}$/),
+    Validators.pattern(/^[A-Za-z\u0600-\u06FF]+(?:\s+[A-Za-z\u0600-\u06FF]+)+$/),
   ]);
   userEmail: FormControl<string | null> = new FormControl('', [
     Validators.required,
