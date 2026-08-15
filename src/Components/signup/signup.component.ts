@@ -37,10 +37,10 @@ export class SignupComponent {
       this.confirmPassword.invalid ||
       this.confirmPassword.value !== this.userPassword.value
     ) {
-      this.userName.markAsTouched();
-      this.userEmail.markAsTouched();
-      this.userPassword.markAsTouched();
-      this.confirmPassword.markAsTouched();
+      this.userName.markAsUntouched();
+      this.userEmail.markAsUntouched();
+      this.userPassword.markAsUntouched();
+      this.confirmPassword.markAsUntouched();
 
       return;
     }
