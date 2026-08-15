@@ -40,6 +40,8 @@ export class AuthComponent {
       }
     } else {
       this.userNotFound = true;
+      this.userEmail.reset();
+      this.userPassword.reset();
     }
   }
 }
