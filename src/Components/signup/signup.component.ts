@@ -38,9 +38,14 @@ export class SignupComponent {
       this.confirmPassword.value !== this.userPassword.value
     ) {
       this.userName.markAsUntouched();
+      this.userName.reset();
       this.userEmail.markAsUntouched();
+      this.userEmail.reset();
       this.userPassword.markAsUntouched();
+      this.userPassword.reset();
       this.confirmPassword.markAsUntouched();
+      this.confirmPassword.reset();
+      this.userBirthDate.reset();
 
       return;
     }
